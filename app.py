@@ -1,13 +1,19 @@
 import sys
+import os
 from PyQt6.QtWidgets import QApplication, QStackedWidget
-from PyQt6.QtGui import QPalette, QColor, QFont
+from PyQt6.QtGui import QPalette, QColor, QFont, QIcon
 from database.db_manager import DataBaseManager 
 from ui.dashboard import AuthScreen, DashBoardUI
 
 class CryptoGuardRunner:
     def __init__(self):
         self.app = QApplication(sys.argv)
-        self.app.setStyle("Fusion") 
+        self.app.setStyle("Fusion")
+
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        icon_path = os.path.join(base_dir, "favicon.ico")
+
+        self.app.setWindowIcon(QIcon(icon_path)) 
         
         # --- GLOBAL FONT ΣΕ CENTURY GOTHIC BOLD ---
         global_font = QFont("Century Gothic", 10, QFont.Weight.Bold)
@@ -36,6 +42,7 @@ class CryptoGuardRunner:
         self.db = DataBaseManager()
         self.window_stack = QStackedWidget()
         self.window_stack.setWindowTitle("CryptoGuard AI Engine")
+        self.window_stack.setWindowIcon(QIcon(icon_path))
         
         # Login Screen
         self.auth = AuthScreen(self.db, self.launch_main_ui)

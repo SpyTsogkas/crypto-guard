@@ -5,7 +5,7 @@ from PyQt6.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QLabel,
                              QLineEdit, QPushButton, QComboBox, QGraphicsDropShadowEffect,
                              QFrame, QGridLayout, QProgressBar, QScrollArea)
 from PyQt6.QtCore import Qt, QPropertyAnimation, QEasingCurve, QThread, pyqtSignal, QPoint
-from PyQt6.QtGui import QFont, QColor, QCursor, QPixmap
+from PyQt6.QtGui import QFont, QColor, QCursor, QPixmap, QIcon
 from backend import DataFetcher
 from core import InvestmentAdvisor 
 
