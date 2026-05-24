@@ -41,9 +41,9 @@ CryptoGuard/
 │   └── dashboard.py        # PyQt6 UI (AuthScreen + DashboardUI)
 │
 ├── core/
-│   ├── data_fetcher.py     # Άντληση δεδομένων από CoinGecko API
+│   ├── data_fetcher.py     # Data Fetchings από CoinGecko API
 │   ├── predictor.py        # AI Engine (Random Forest Multi-Horizon)
-│   └── investment_advisor.py # Ορχηστρωτής + Logic Engine
+│   └── investment_advisor.py # Οργάνωση + Logic Engine
 │
 └── database/
     ├── db_manager.py       # SQLite διαχείριση
@@ -139,7 +139,7 @@ venv\Scripts\activate
 # 3. Ενεργοποίηση (Linux/macOS)
 source venv/bin/activate
 
-# 4. Εγκατάσταση εξαρτήσεων
+# 4. Εγκατάσταση Βιβλιοθηκών
 pip install -r requirements.txt
 
 # 5. Εκτέλεση
@@ -156,7 +156,7 @@ python app.py
 # 1. Μετακίνηση στον φάκελο
 cd path/to/CryptoGuard
 
-# 2. Εγκατάσταση εξαρτήσεων
+# 2. Εγκατάσταση βιβλιοθηκών
 pip install PyQt6 pandas numpy scikit-learn requests
 
 # 3. Εκτέλεση
