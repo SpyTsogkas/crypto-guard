@@ -35,7 +35,7 @@
 CryptoGuard/
 │
 ├── app.py                  # Σημείο εκκίνησης της εφαρμογής
-├── requirements.txt        # Εξαρτήσεις Python
+├── requirements.txt        # Frameworks - Python
 │
 ├── ui/
 │   └── dashboard.py        # PyQt6 UI (AuthScreen + DashboardUI)
