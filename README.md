@@ -57,7 +57,7 @@ CryptoGuard/
 ### Βήμα 1 — Εγκατάσταση Python
 
 1. Κατέβασε Python από το [python.org](https://www.python.org/downloads/)
-2. Κατά την εγκατάσταση, **τσέκαρε** το `Add Python to PATH`
+2. Κατά την εγκατάσταση, **ΜΗΝ ΤΣΕΚΑΡΕΙΣ** το `Add Python to PATH`
 3. Επαλήθευσε στο terminal:
 ```bash
 python --version
@@ -93,7 +93,7 @@ venv\Scripts\activate
 source venv/bin/activate
 ```
 
-> ✅ Θα δεις `(venv)` στην αρχή της γραμμής του terminal.
+> Θα δεις `(venv)` στην αρχή της γραμμής του terminal.
 
 ### Βήμα 6 — Επιλογή Python Interpreter στο VS Code
 
