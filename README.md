@@ -1,88 +1,88 @@
 # 🛡️ CryptoGuard — AI Investment Advisor
 
-> Επαγγελματική Desktop εφαρμογή ανάλυσης κρυπτονομισμάτων με Τεχνητή Νοημοσύνη (Random Forest), FinTech UI (PyQt6) και τοπική βάση δεδομένων SQLite.
+> A professional desktop application for cryptocurrency analysis powered by Artificial Intelligence (Random Forest), a FinTech UI (PyQt6), and a local SQLite database.
 
 ---
 
-## Πίνακας Περιεχομένων
+## Table of Contents
 
-- [Απαιτήσεις Συστήματος](#-απαιτήσεις-συστήματος)
-- [Δομή Φακέλων](#-δομή-φακέλων)
-- [Εγκατάσταση — VS Code](#-εγκατάσταση--vs-code-συνιστάται)
-- [Εγκατάσταση — Virtual Environment (venv)](#-εγκατάσταση--virtual-environment-venv)
-- [Εγκατάσταση — Απλός Python Interpreter](#-εγκατάσταση--απλός-python-interpreter)
-- [Εκτέλεση της Εφαρμογής](#-εκτέλεση-της-εφαρμογής)
-- [Οδηγός Χρήσης](#-οδηγός-χρήσης)
-- [Αντιμετώπιση Προβλημάτων](#-αντιμετώπιση-προβλημάτων)
+- [System Requirements](#system-requirements)
+- [Folder Structure](#folder-structure)
+- [Installation — VS Code (Recommended)](#installation--vs-code-recommended)
+- [Installation — Virtual Environment (venv)](#installation--virtual-environment-venv)
+- [Installation — Plain Python Interpreter](#installation--plain-python-interpreter)
+- [Running the Application](#running-the-application)
+- [User Guide](#user-guide)
+- [Troubleshooting](#troubleshooting)
 
 ---
 
-## Απαιτήσεις Συστήματος
+## System Requirements
 
-| Στοιχείο | Ελάχιστη Απαίτηση |
+| Component | Minimum Requirement |
 |---|---|
-| Λειτουργικό Σύστημα | Windows 10/11 ή Linux (Ubuntu 20.04+) |
-| Python | 3.10 ή νεότερη |
+| Operating System | Windows 10/11 or Linux (Ubuntu 20.04+) |
+| Python | 3.10 or newer |
 | RAM | 4 GB |
-| Σύνδεση Internet | Απαραίτητη (για CoinGecko API) |
-| CoinGecko API Key | Demo plan (δωρεάν) |
+| Internet Connection | Required (for the CoinGecko API) |
+| CoinGecko API Key | Demo plan (free) |
 
 ---
 
-## Δομή Φακέλων
+## Folder Structure
 
 ```
 CryptoGuard/
 │
-├── app.py                  # Σημείο εκκίνησης της εφαρμογής
-├── requirements.txt        # Frameworks - Python
+├── app.py                  # Application entry point
+├── requirements.txt        # Python frameworks
 │
 ├── ui/
 │   └── dashboard.py        # PyQt6 UI (AuthScreen + DashboardUI)
 │
 ├── core/
-│   ├── data_fetcher.py     # Data Fetchings από CoinGecko API
+│   ├── data_fetcher.py     # Data fetching from the CoinGecko API
 │   ├── predictor.py        # AI Engine (Random Forest Multi-Horizon)
-│   └── investment_advisor.py # Οργάνωση + Logic Engine
+│   └── investment_advisor.py # Organization + Logic Engine
 │
 └── database/
-    ├── db_manager.py       # SQLite διαχείριση
-    └── crypto_guard.db     # Τοπική βάση (δημιουργείται αυτόματα)
+    ├── db_manager.py       # SQLite management
+    └── crypto_guard.db     # Local database (created automatically)
 ```
 
 ---
 
-## Εγκατάσταση — VS Code (Συνιστάται)
+## Installation — VS Code (Recommended)
 
-### Βήμα 1 — Εγκατάσταση Python
+### Step 1 — Install Python
 
-1. Κατέβασε Python από το [python.org](https://www.python.org/downloads/)
-2. Κατά την εγκατάσταση, **ΜΗΝ ΤΣΕΚΑΡΕΙΣ** το `Add Python to PATH`
-3. Επαλήθευσε στο terminal:
+1. Download Python from [python.org](https://www.python.org/downloads/)
+2. During installation, **DO NOT CHECK** the `Add Python to PATH` option
+3. Verify in the terminal:
 ```bash
 python --version
-# Αναμενόμενο: Python 3.10.x ή νεότερη
+# Expected: Python 3.10.x or newer
 ```
 
-### Βήμα 2 — Εγκατάσταση VS Code
+### Step 2 — Install VS Code
 
-1. Κατέβασε VS Code από το [code.visualstudio.com](https://code.visualstudio.com/)
-2. Εγκατάστησε το extension **Python** (από Microsoft) μέσα από το VS Code:
-   - `Ctrl+Shift+X` → αναζήτηση "Python" → Install
+1. Download VS Code from [code.visualstudio.com](https://code.visualstudio.com/)
+2. Install the **Python** extension (by Microsoft) from within VS Code:
+   - `Ctrl+Shift+X` → search "Python" → Install
 
-### Βήμα 3 — Άνοιγμα του Project
+### Step 3 — Open the Project
 
-1. `File` → `Open Folder` → επίλεξε τον φάκελο `CryptoGuard`
-2. Άνοιξε το integrated terminal: `` Ctrl+` ``
+1. `File` → `Open Folder` → select the `CryptoGuard` folder
+2. Open the integrated terminal: `` Ctrl+` ``
 
-### Βήμα 4 — Δημιουργία Virtual Environment
+### Step 4 — Create a Virtual Environment
 
-Στο terminal του VS Code:
+In the VS Code terminal:
 ```bash
 python -m venv venv
 ```
 
-### Βήμα 5 — Ενεργοποίηση Virtual Environment
+### Step 5 — Activate the Virtual Environment
 
 **Windows:**
 ```bash
@@ -93,28 +93,28 @@ venv\Scripts\activate
 source venv/bin/activate
 ```
 
-> Θα δεις `(venv)` στην αρχή της γραμμής του terminal.
+> You will see `(venv)` at the beginning of the terminal line.
 
-### Βήμα 6 — Επιλογή Python Interpreter στο VS Code
+### Step 6 — Select the Python Interpreter in VS Code
 
-1. `Ctrl+Shift+P` → πληκτρολόγησε `Python: Select Interpreter`
-2. Επίλεξε την επιλογή που έχει `venv` στο path (π.χ. `./venv/Scripts/python.exe`)
+1. `Ctrl+Shift+P` → type `Python: Select Interpreter`
+2. Choose the option that has `venv` in its path (e.g. `./venv/Scripts/python.exe`)
 
-### Βήμα 7 — Εγκατάσταση Εξαρτήσεων
+### Step 7 — Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Βήμα 8 — Ρύθμιση API Key
+### Step 8 — Configure the API Key
 
-Άνοιξε το αρχείο `core/data_fetcher.py` και αντικατάστησε:
+Open the file `core/data_fetcher.py` and replace:
 ```python
-self.api_key = "ΤΟ_ΔΙΚΟ_ΣΟΥ_API_KEY"
+self.api_key = "YOUR_OWN_API_KEY"
 ```
-> Δωρεάν API key από: [coingecko.com/en/api](https://www.coingecko.com/en/api) → Demo Plan
+> Get a free API key from: [coingecko.com/en/api](https://www.coingecko.com/en/api) → Demo Plan
 
-### Βήμα 9 — Εκτέλεση
+### Step 9 — Run
 
 ```bash
 python app.py
@@ -122,91 +122,91 @@ python app.py
 
 ---
 
-## Εγκατάσταση — Virtual Environment (venv)
+## Installation — Virtual Environment (venv)
 
-Αν δεν χρησιμοποιείς VS Code, ακολούθα τα παρακάτω βήματα από οποιοδήποτε terminal.
+If you are not using VS Code, follow the steps below from any terminal.
 
 ```bash
-# 1. Μετακίνηση στον φάκελο του project
+# 1. Navigate to the project folder
 cd path/to/CryptoGuard
 
-# 2. Δημιουργία virtual environment
+# 2. Create a virtual environment
 python -m venv venv
 
-# 3. Ενεργοποίηση (Windows)
+# 3. Activate (Windows)
 venv\Scripts\activate
 
-# 3. Ενεργοποίηση (Linux/macOS)
+# 3. Activate (Linux/macOS)
 source venv/bin/activate
 
-# 4. Εγκατάσταση Βιβλιοθηκών
+# 4. Install libraries
 pip install -r requirements.txt
 
-# 5. Εκτέλεση
+# 5. Run
 python app.py
 ```
 
 ---
 
-## Εγκατάσταση — Απλός Python Interpreter
+## Installation — Plain Python Interpreter
 
-> Η μέθοδος αυτή εγκαθιστά τα packages globally. Συνιστάται μόνο για γρήγορη δοκιμή.
+> This method installs the packages globally. Recommended only for a quick test.
 
 ```bash
-# 1. Μετακίνηση στον φάκελο
+# 1. Navigate to the folder
 cd path/to/CryptoGuard
 
-# 2. Εγκατάσταση βιβλιοθηκών
+# 2. Install libraries
 pip install PyQt6 pandas numpy scikit-learn requests
 
-# 3. Εκτέλεση
+# 3. Run
 python app.py
 ```
 
 ---
 
-## Εκτέλεση της Εφαρμογής
+## Running the Application
 
 ```bash
 python app.py
 ```
 
-Το παράθυρο Login εμφανίζεται σε **450×600px**.
+The Login window appears at **450×600px**.
 
 ---
 
-## Οδηγός Χρήσης
+## User Guide
 
-### 1. Εγγραφή (Register)
-- Επίλεξε την καρτέλα **Register**
-- Εισήγαγε **Username** και **Password**
-- Επίλεξε **Risk Profile**: `Conservative` / `Moderate` / `Aggressive`
-- Πάτα **Submit**
+### 1. Registration (Register)
+- Select the **Register** tab
+- Enter a **Username** and **Password**
+- Select a **Risk Profile**: `Conservative` / `Moderate` / `Aggressive`
+- Click **Submit**
 
-### 2. Σύνδεση (Login)
-- Εισήγαγε τα στοιχεία σου
-- Πάτα **Login** — το παράθυρο μεγαλώνει αυτόματα σε **90% της οθόνης**
+### 2. Sign In (Login)
+- Enter your credentials
+- Click **Login** — the window automatically expands to **90% of the screen**
 
-### 3. Ανάλυση Νομίσματος
-- Επίλεξε νόμισμα από τα κουμπιά (Bitcoin, Ethereum, κ.λπ.)
-- Περίμενε την ανάλυση — η εφαρμογή **δεν παγώνει** (ασύγχρονη εκτέλεση)
-- Δες:
-  - **Τρέχουσα Τιμή**
-  - **Προβλεπόμενη Τιμή** (1 Ημέρα έως 1 Μήνα)
+### 3. Coin Analysis
+- Select a coin using the buttons (Bitcoin, Ethereum, etc.)
+- Wait for the analysis — the application **does not freeze** (asynchronous execution)
+- View:
+  - **Current Price**
+  - **Predicted Price** (1 Day up to 1 Month)
   - **MAE** (Margin of Error)
-  - **Προσωποποιημένη Συμβουλή** βάσει Risk Profile
+  - **Personalized Advice** based on your Risk Profile
 
 ---
 
-## Αντιμετώπιση Προβλημάτων
+## Troubleshooting
 
-| Πρόβλημα | Αιτία | Λύση |
+| Problem | Cause | Solution |
 |---|---|---|
-| `401 Unauthorized` | Λάθος ή ληγμένο API Key | Ανανέωσε το key στο `data_fetcher.py` |
-| `Not enough data` warning | Λίγα δεδομένα για το horizon | Κανονικό — το σύστημα παραλείπει αυτό το horizon |
-| `ModuleNotFoundError` | Λείπει πακέτο | Τρέξε `pip install -r requirements.txt` |
-| Μαύρο παράθυρο | GPU rendering issue | Πρόσθεσε `QT_OPENGL=software` ως env variable |
-| `database/` δεν βρίσκεται | Ο φάκελος δεν υπάρχει | Δημιούργησε χειροκίνητα: `mkdir database` |
+| `401 Unauthorized` | Wrong or expired API Key | Renew the key in `data_fetcher.py` |
+| `Not enough data` warning | Too little data for the horizon | Normal — the system skips that horizon |
+| `ModuleNotFoundError` | Missing package | Run `pip install -r requirements.txt` |
+| Black window | GPU rendering issue | Add `QT_OPENGL=software` as an environment variable |
+| `database/` not found | The folder does not exist | Create it manually: `mkdir database` |
 
 ---
 
@@ -222,8 +222,8 @@ requests>=2.28.0
 
 ---
 
-## Άδεια Χρήσης
+## License
 
-Ακαδημαϊκό Project — Χρήση μόνο για εκπαιδευτικούς σκοπούς.
+Academic Project — For educational use only.
 
-> **Σημείωση:** Οι προβλέψεις της εφαρμογής είναι αποτέλεσμα αλγορίθμου Machine Learning και **δεν αποτελούν επενδυτική συμβουλή**.
+> **Note:** The application's predictions are the result of a Machine Learning algorithm and **do not constitute investment advice**.
